@@ -56,7 +56,7 @@ export default {
       about,
       instructions,
       opening_hours,
-      open_on_weekends,
+      open_on_weekends: open_on_weekends === 'true',
       images,
     };
 
@@ -78,6 +78,7 @@ export default {
       abortEarly: false, //retorna todos erros
     });
 
+    // @ts-ignore
     const orphanage = orphanagesRepository.create(data);
 
     await orphanagesRepository.save(orphanage);
